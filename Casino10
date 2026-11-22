@@ -1,0 +1,683 @@
+import random
+import math
+gcompte = 100
+print("")
+print("")
+print("")
+print("[----------------------------]")
+print("[ Bienvenu au casino Norex ! ]")
+print("[----------------------------]")
+print("")
+print("")
+print("   Ici, vous pouvez jouer a")
+print("    une multitude de jeux !")
+print("")
+print("")
+for i in range(100000000):
+  rep50 = input("Entrer ? (exe)")
+  if rep50 == "":
+    print("")
+    print("Voici les jeux proposes :")
+    print("")
+    print("1.Jeu du nombre - tapez 1")
+    print("2.Jeu du quotient - tapez 2")
+    print("3.Jeux de la roue - tapez 3")
+    print("4.Jeux de RPG - tapez 4")
+    print("5.Blackjack - tapez 5")
+    print("")
+    print("")
+    print("Vous etes a", gcompte, "EUR.")
+    print("")
+  rep100 = int(input("A quoi voulez vous jouer :"))
+  if rep100 == 3:
+    print("")
+    print("Vous pouvez faire 6 actions :")
+    print("")
+    print("1.Parier(entrer): Jouer votre mise.")
+    print("2.Epargner(e): Recuperer vos gains.")
+    print("3.Emprunter(p): Faire un credit.")
+    print("4.Rendre(r): Rendre les emprunts.")
+    print("5.Don(d): Donner de argent a la banque.")
+    print("6.Quitter (666-quest 1): Retours au")
+    print("")
+    un = ["1", "2", "3", "4", "5"]
+    deux = ["1", "2", "3", "4", "5"]
+    trois = ["1", "2", "3", "4", "5"]
+    quatre = ["1", "2", "3", "4", "5"]
+    ress = 0
+    compte = gcompte
+    banque = 1000
+    print("Votre solde est de :", compte, "EUR")
+    print("")
+    for i in range(100000000):
+      mise = int(input("Combien voulez-vous mettre :"))
+      mised = mise
+      if mise == 666:
+          gcompte = gcompte + compte
+          mise = 0
+          compte = 0
+          print("")
+          print("Votre mise a ete automatiquement")
+          print("transpheree sur votre compte !")
+          print("")
+          print("A plus tard !")
+          print("")
+          print("Nouveau grand compte :",gcompte, "EUR")
+          print("")
+          break
+      if mise > compte:
+        print("")
+        print("Pas asser de tune.")
+        print("")
+      else:    
+        compte -= mise
+        print("")
+        rep = ""
+        while rep == "":
+          rep = input("Lancer ?")
+          if rep == "ed":
+            compte = compte + mise
+            gcompte = gcompte + compte
+            mise = 0
+            compte = 0
+            print("")
+            print("Votre mise a ete automatiquement")
+            print("transpheree sur votre compte !")
+            print("")
+            print("A plus tard !")
+            print("")
+            print("Nouveau grand compte :",gcompte, "EUR")
+            print("")
+            break
+          elif rep == "":
+            res = random.choice(un)
+            res2 = random.choice(deux)              
+            res3 = random.choice(trois)
+            res4 = random.choice(quatre)
+            if res == res2 == res3 == res4:
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Jackpot ! +100%")
+              print("")
+              mise += mise
+              print("Votre mise est de :", mise, "EUR") 
+              print("")          
+            elif res == res2 == res3:
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")        
+              print("")
+              print("Triple ! +60%")
+              print("")
+              mise += (mise/100)*60
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res2== res3 == res4:
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")        
+              print("")
+              print("Triple ! +60%")
+              print("")
+              mise += (mise/100)*60
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res3== res4 == res:
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")        
+              print("")
+              print("Triple ! +60%")
+              print("")
+              mise += (mise/100)*60
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res4 == res == res2:
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")        
+              print("")
+              print("Triple ! +60%")
+              print("")
+              mise += (mise/100)*60
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res == res2 and res3 == res4:
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Combo ! +75%")
+              print("")
+              mise += (mise/100)*75
+              print("Votre mise est de :", mise, "EUR")
+              print("")   
+            elif res == res4 and res2 == res3:
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Combo ! +75%")
+              print("")
+              mise += (mise/100)*75
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res == res3 and res2 == res4:
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Combo ! +75%")
+              print("")
+              mise += (mise/100)*75
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res == "1" and res2 == "2" and res3 == "3" and res4 == "4":
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Grande suite ! +85%")
+              print("")
+              mise += (mise/100)*85
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res == "2" and res2 == "3" and res3 == "4" and res4 == "5":
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Bonne suite ! +75%")
+              print("")
+              mise += (mise/100)*75
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res == "1" and res2 == "2" and res3 == "3":
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Suite ! +65%")
+              print("")
+              mise += (mise/100)*65
+              print("Votre mise est de :", mise, "EUR")
+              print("")  
+            elif res2 == "2" and res3 == "3" and res4 == "4":
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Petite suite ! +50%")
+              print("")
+              mise += (mise/100)*50
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res2 == "3" and res3 == "4" and res4 == "5":
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Petite suite ! +50%")
+              print("")
+              mise += (mise/100)*50
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res == "4" and res2 == "3" and res3 == "2" and res4 == "1":
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Bonne suite inverse ! +80%")
+              print("")
+              mise += (mise/100)*80
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res == "5" and res2 == "4" and res3 == "3" and res4 == "2":
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Grande suite inverse ! +85%")
+              print("")
+              mise += (mise/100)*85
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res2 == "3" and res3 == "2" and res4 == "1":
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Suite inverse ! +80%")
+              print("")
+              mise += (mise/100)*80
+              print("Votre mise est de :", mise, "EUR")
+              print("")  
+            elif res == "4" and res2 == "3" and res3 == "2":
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Suite inverse ! +80%")
+              print("")
+              mise += (mise/100)*80
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            elif res == "4" and res2 == "3" and res3 == "2":
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Suite inverse ! +80%")
+              print("")
+              mise += (mise/100)*80
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+            else :
+              print("")
+              print("Resultat :[",res,"][",res2,"][",res3,"][", res4, "]")
+              print("")
+              print("Rien... -25%")
+              print("")
+              mise -= (mise/100)*25
+              print("Votre mise est de :", mise, "EUR")
+              print("")
+          elif rep == "e":
+            compte = compte + mise//1
+            banque = banque + mised - mise//1
+            print("")
+            print("Vous avez récupéré vos gains !") 
+            print("")
+            print("Nouveau solde :", compte, "EUR.")
+            print("")
+          elif rep == "p":           
+            print("")
+            print("La banque est a", banque, "EUR.")
+            print("")
+            ress = int(input("Combien emprunter :"))
+            if ress > banque:
+              print("")
+              print("Trop de credits demandes.")
+              print("")
+            else :
+              compte = compte + mise//1
+              compte = compte + ress
+              banque = banque - ress
+              print("")
+              print("Taxe : 3%")
+              print("")
+              print("Transaction reussi !")
+              print("Nouveau solde :", compte, "EUR.")
+              print("")
+          elif rep == "b":
+            compte = compte + mise//1
+            banque = banque + mised - mise//1
+            print("")
+            print("Votre mise a ete automatiquement")
+            print("transpheree sur votre compte !")
+            print("")
+            print("Nouveau solde :", compte, "EUR.")
+            print("")
+            print("La banque est a", banque, "EUR.")
+            print("")
+          elif rep == "r":
+            compte = compte + mise
+            print("")
+            print("Votre mise a ete automatiquement")
+            print("transpheree sur votre compte !")
+            print("")
+            print("Nouveau solde :", compte, "EUR.")
+            print("")
+            print("Merci de rendre !")
+            print("")
+            banque = banque + ress + (ress/100)*3
+            compte = compte - ress - (ress/100)*3
+            print("Nouveau solde :", compte, "EUR.")
+            print("")
+          elif rep == "d":
+            compte = compte + mise//1
+            print("")
+            ras = int(input("Combien donnez vous :"))
+            banque = banque + ras
+            compte = compte - ras 
+            print("")
+            print("Merci du don !")
+            print("")
+            print("Nouveau solde :", compte, "EUR.")
+            print("")         
+  elif rep100 == 1:
+    compte = gcompte    
+    print("")
+    print("Pour le jeu du nombre, votre")
+    print("but est en deux temps :")
+    print("")
+    print("  -Dans un premier temps :")
+    print("    -Trouver le nombre pense")
+    print("     par le bot.")
+    print("")
+    print("  -Dans un second temps :")
+    print("    -Trouver avec le moin de ")
+    print("     essais possible.")  
+    print("")
+    rep2 = input("Lancer ? (tapez exe)")
+    print("")
+    print("Avant de commencer, voici")
+    print("quelques indications :")
+    print("")
+    print("1.Votre solde est de", compte, "EUR")
+    print("2.Si vous trouvez des la 1ere ")
+    print("  tentative : +200%")
+    print("3.Entre 2 et 7 tentatives :")
+    print("  +100%, +90%, +80%, +70%,etc...")
+    print("4.8 ou plus :")
+    print("  -20%")
+    print("")
+    rep56 = input("Lancer ? (tapez exe)")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    res = random.randint(1, 100)
+    for i in range(8):
+      print("")
+      rep1 = int(input("Quel nombre (101-Quitter) :"))
+      if rep1 == 101:
+        print("")
+        print("Argent recupere !")
+        print("")
+        gcompte = gcompte + compte
+        print("Nouveau grand compte :", gcompte, "EUR")
+        print("")
+        break
+      if rep1 == res:
+        print("")
+        print("Trouve !")
+        print("")
+        if i == 0:
+          print("1er coup ! +200%")
+          print("")
+          compte = compte + compte * 2
+          print("Nouveau solde :", compte)
+          print("")
+        elif i == 1:
+          print("2eme coup ! +100%")
+          print("")
+          compte = compte * 2
+          print("Nouveau solde :", compte)
+          print("")
+        elif i == 2:
+          print("3eme coup ! +90%")
+          print("")
+          compte = compte + (compte/100)*90
+          print("Nouveau solde :", compte)
+          print("")
+        elif i == 3:
+          print("4eme coup ! +80%")
+          print("")
+          compte = compte + (compte/100)*80
+          print("Nouveau solde :", compte)
+          print("")
+        elif i == 4:
+          print("5eme coup ! +70%")
+          print("")
+          compte = compte + (compte/100)*70
+          print("Nouveau solde :", compte)
+          print("")
+        elif i == 5:
+          print("6eme coup ! +60%")
+          print("")
+          compte = compte + (compte/100)*60
+          print("Nouveau solde :", compte)
+          print("")
+        elif i == 6:
+          print("7eme coup... +0%")
+          print("")
+          compte = compte + (compte/100)*0
+          print("Nouveau solde :", compte)
+          print("")  
+      elif rep1 < res:
+        print("")
+        print("Trop bas !")
+      elif rep1 > res:
+        print("")
+        print("Trop haut !")
+      elif i > 6:
+        print("")
+        print("Perdu ! -20%")
+        compte = compte + (compte/100)*0
+        print("")
+        print("Nouveau solde :", compte)
+        print("")
+  elif rep100 == 2:
+    compte = gcompte
+    print("")
+    print("Vous pouvez faire 3 actions :")
+    print("")
+    print("1. Parier (entrer) : +50% votre mise.")
+    print("2. Epargner (e) : Recuperer vos gains.")
+    print("3. Quitter (0 sur quest 1): ")
+    print("   attention a bien epargner"  )
+    print("")
+    print("Les centimes ne sont pas rendus")
+    print("")
+    print("Votre solde est de :", compte, "EUR")
+    print("")
+    for i in range(100000000):
+      mise = int(input("Combien voulez-vous mettre :"))
+      if mise == 0:
+          print("")
+          print("Vous avez récupéré vos gains !") 
+          print("")
+          print("Nouveau solde :", compte, "EUR.")
+          print("")
+          gcompte = gcompte + compte
+          print("Nouveau grand compte :", gcompte, "EUR")
+          print("")
+          break
+      else:
+        compte = compte - mise
+        print("")
+        rep = ""
+        while rep == "":
+          rep = input("Lancer ? : ")
+          if rep == "ed":
+              break
+          elif rep == "":
+              res = random.randint(1, 5)
+              if res == 1:
+                print("")
+                print("Votre mise a pris 50% !")
+                mise = mise + (mise/100)*50
+                print("")
+                print("Votre mise est de :", mise, "EUR.")
+                print("")
+              if res == 2:
+                print("")
+                print("Votre mise a ete divisee...")
+                mise = mise / 2
+                print("")
+                print("Votre mise est de :", mise, "EUR.")
+                print("")
+              if res == 3:
+                print("")
+                print("Votre mise a pris 50% !")
+                mise = mise + (mise/100)*50
+                print("")
+                print("Votre mise est de :", mise, "EUR.")
+                print("")
+              if res == 4:
+                print("")
+                print("Votre mise a ete divisee...")
+                mise = mise / 2
+                print("")
+                print("Votre mise est de :", mise, "EUR.")
+                print("")
+              if res == 5:
+                print("")
+                print("Votre mise a ete divisee...")
+                mise = mise / 2
+                print("")
+                print("Votre mise est de :", mise, "EUR.")
+                print("")
+          elif rep == "e":
+            compte = compte + round(mise, 0)
+            print("")
+            print("Vous avez récupéré vos gains !") 
+            print("")
+            print("Nouveau solde :", compte, "EUR.")
+            print("")
+  elif rep100 == 4:
+    pvm = 50
+    pvj = 50
+    print("")
+    print("Bienvenu dans ce nouveau jeu")
+    print("du casino Norex !")
+    print("")
+    print("Le but du jeu est de terasser")
+    print("le monstre et donc de gagner")
+    print("+50% de votre mise initiale.")
+    print("")
+    print("Attention cepandant de ne pas")
+    print("vous faire tuer (-50% si cas)")
+    print("")
+    print("")
+    rep32 = input("Pret ? (tapez exe)")
+    if rep32 == "":
+      print("")
+      print("Vous avez deux actions") 
+      print("possibles :")
+      print("")
+      print("1.Attaquer (a): infliger degats")
+      print("2.Soigner (s): recuperer des pv")
+      print("")
+      print("Soyez avises que le monstre")
+      print("peut faire de meme...")
+      print("")
+      print("Votre solde est de", gcompte, "EUR.")
+      print("")
+      compte = int(input("Combien voulez vous miser :"))       
+      print("")
+      if compte <= gcompte:
+        while pvj >= 0 or pvm >= 0:
+          print("")
+          rep = input("Action :")
+          if rep == "a":
+            res = random.randint(5, 15)
+            pvm -= res
+            print("Pv monstre :", pvm)
+            print("")
+          elif rep == "s":
+            res2 = random.randint(5, 15)
+            pvj += res2
+            print("Pv joueur :", pvj)
+            print("")
+          repm = random.randint(1, 2)
+          if pvj <= 0:
+            print("")
+            print("Perdu... -50%")
+            print("")
+            gcompte = gcompte - (compte/100)*50
+            break
+          if pvm <= 0:
+            print("")
+            print("Gagne ! +50%")
+            print("")
+            gcompte = gcompte + (compte/100)*50
+            break
+          if repm == 1:
+            res = random.randint(5, 15)
+            print("Le monstre attaque !")
+            pvj -= res
+            print("Pv joueur :", pvj)
+            print("")
+          elif repm == 2:
+            res2 = random.randint(5, 15)
+            print("Le monstre se soingne !")
+            pvm += res2
+            print("Pv monstre :", pvm)
+            print("")
+          if pvj <= 0:
+            print("")
+            print("Perdu... -50%")
+            print("")
+            gcompte = gcompte - (compte/100)*50
+            break
+          if pvm <= 0:
+            print("")
+            print("Gagne ! +50%")
+            print("")
+            gcompte = gcompte + (compte/100)*50
+            break
+      else:
+        print("Pas asser de tune")
+        print("")
+  elif rep100 == 5:
+    compte = gcompte
+    print("")
+    print("Bienvenu dans ce blackjack ")
+    print("spetial casino Norex !")
+    print("")
+    print("Votre but est simple :")
+    print("")
+    print("1. But : faire 21 ou s'en approcher.")
+    print("2. D/R/V=10 pts, As = 1/11 pts.")
+    print("3. Le croupier s'arrete a 17 pts.")
+    print("")
+    print("Votre solde est de :", compte, "EUR.")
+    print("")
+    repp = int(input("Combien voulez vous miser :"))
+    gcompte = gcompte - repp
+    print("")
+    print("Vous pouvez faire 2 actions :")
+    print("")
+    print("1.Tirer (1): Piocher une catre.")
+    print("2.Rester (2): Rester sur sa mise.")
+    print("")
+    cartes = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
+    joueur = [random.choice(cartes), random.choice(cartes)]
+    croupier = [random.choice(cartes), random.choice(cartes)]
+    print("")
+    print("Carte du croupier :", croupier[0])
+    print("")
+    while sum(joueur) < 21:
+      print("Vos cartes :",joueur,"Total :", sum(joueur))
+      print("")
+      print("")
+      choix = input("Tirer (1) ou Rester (2) ? ")
+      if choix == "1":
+        joueur.append(random.choice(cartes))
+      else:
+        break
+    print("")
+    print("Votre score final :", sum(joueur))
+    if sum(joueur) > 21:
+      print("")
+      print("Depasse 21 ! Vous avez perdu.")
+      print("")
+      print("        Mise -50%...")
+      print("")
+      compte = compte - (repp/100)*50
+      print("Nouvelle mise :", compte)
+      print("")
+      gcompte = gcompte + compte
+    else:
+      while sum(croupier) < 17:
+        croupier.append(random.choice(cartes))
+        print("")
+        print("Cartes du croupier :", croupier, "Total :", sum(croupier))
+        print("")
+      if sum(croupier) > 21 or sum(joueur) > sum(croupier):
+        print("")
+        print("Bravo, vous avez gagne !")
+        print("")
+        print("       Mise +50% !")
+        print("")
+        compte = compte + (repp/100)*50
+        print("Nouvelle mise :", compte)
+        print("")
+        gcompte = gcompte + compte
+      elif sum(joueur) < sum(croupier):
+        print("")
+        print("Le croupier gagne.")
+        print("")
+        print("        Mise -50%...")
+        print("")
+        compte = compte - (repp/100)*50
+        print("Nouvelle mise :", compte)
+        print("")
+        gcompte = gcompte + compte
+      else:
+        print("")
+        print("Egalite !")
+        print("")
+        gcompte = gcompte + compte
